@@ -31,7 +31,7 @@ def learned_dynamics(params):
   def dynamics(q, q_t):
 #     assert q.shape == (2,)
     state = wrap_coords(jnp.concatenate([q, q_t]))
-    return jnp.squeeze(nn_forward_fn(params, state), axis=-1)
+    return nn_forward_fn(params, state)
   return dynamics
 
 
